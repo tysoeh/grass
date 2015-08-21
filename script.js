@@ -6,7 +6,7 @@ function lawnInit (){
 
   
 }
-function blade (height, color, elementId){
+function Blade (height, color, elementId){
   this.height = height;
   this.color = color;
   this.elementId = elementId;
@@ -16,7 +16,7 @@ function blade (height, color, elementId){
 }
 
 
-prototype.blade.grow = (){
+Blade.prototype.grow = (){
   
   
   //make blade increase in height by a pixel
