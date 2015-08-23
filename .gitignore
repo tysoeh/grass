@@ -1,0 +1,9 @@
+#ignore OSX meta files
+.DS_Store
+
+#ignore any miscellaneous logs
+*.log
+
+#ignore vim swap files
+*.swp
+*.swo
