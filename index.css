@@ -1,7 +1,18 @@
+.lawn {
+  position: fixed;
+  bottom: 0px;
+}
 .soil {
   height: 10px;
   width: 50px;
   position: fixed;
   bottom: 0px;
   background-color: brown;
+}
+.blade {
+  height: 0px;
+  width: 1px;
+  position: fixed;
+  bottom: 10px;
+  background-color: green;
 }
