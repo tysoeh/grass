@@ -1,0 +1,7 @@
+.soil {
+  height: 10px;
+  width: 50px;
+  position: fixed;
+  bottom: 0px;
+  background-color: brown;
+}
