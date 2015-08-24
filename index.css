@@ -10,11 +10,3 @@
   left: 0;
   background-color: SaddleBrown;
 }
-.blade {
-  height: 0;
-  width: 1px;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  background-color: green;
-}

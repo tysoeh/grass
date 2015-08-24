@@ -16,9 +16,7 @@ function Blade (instanceNum){
   //bladeClone.style.color = bladeColor; //mess with this later- randomize shade of green
   //var bladeColor = randomizer();
   
-  var bladeGrowRate = Math.floor(Math.random() * 500 + 501); //sets a random number between 501 and 1000
-  setInterval(function(){grow()}, bladeGrowRate); //calls the grow function at the rate of once every "bladeGrowRate" milliseconds
-  
+  //tell blade to grow at a random rate somewhere here
 
   function grow(){ //makes blade increase in height by a pixel
     bladeHeightValue ++;
