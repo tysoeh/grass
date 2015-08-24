@@ -1,18 +1,22 @@
 .lawn {
   position: fixed;
-  bottom: 0px;
+  bottom: 100px;
+  vertical-align: bottom;
+  float: left;
 }
 .soil {
   height: 10px;
   width: 50px;
-  position: fixed;
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background-color: brown;
 }
 .blade {
-  height: 0px;
+  height: 0;
   width: 1px;
-  position: fixed;
+  position: absolute;
   bottom: 10px;
+  left: 0;
   background-color: green;
 }
