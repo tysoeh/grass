@@ -16,18 +16,17 @@ function Blade (instanceNum){
   //bladeClone.style.color = bladeColor; //mess with this later- randomize shade of green
   //var bladeColor = randomizer();
   
-  var bladeGrowRate = Math.floor(Math.random() * 300 + 150); //sets a random number between 149 and 449
-  setInterval(function(){grow()}, bladeGrowRate); //calls the grow function at the rate of whatever random number was just assigned
-
-
-function grow(){ //makes blade increase in height by a pixel
-  bladeHeightValue ++;
-  bladeHeight = bladeClone.style.height = bladeHeightValue + "px";
-}
+  var bladeGrowRate = Math.floor(Math.random() * 500 + 501); //sets a random number between 501 and 1000
+  setInterval(function(){grow()}, bladeGrowRate); //calls the grow function at the rate of once every "bladeGrowRate" milliseconds
   
+
+  function grow(){ //makes blade increase in height by a pixel
+    bladeHeightValue ++;
+    bladeHeight = bladeClone.style.height = bladeHeightValue + "px";
+  }
 }
-for (i=0; i<=449; i++){ //create "i" number of blades
-Blade(i);
-document.getElementById("soil").style.width = i + 1 + "px"; //make the soil as wide as the number of blades of grass
+for (i=0; i<=200; i++){ //create "i" number of blades
+  Blade(i);
+  document.getElementById("soil").style.width = i+1 + "px"; //make the soil element as wide as the number of blades of grass
 }
 
