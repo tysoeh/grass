@@ -1,10 +1,27 @@
 .lawn {
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   width: 100%;
+
 }
 .soil {
   height: 10px;
   background-color: SaddleBrown;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
+
+
+.blade {
+	width: 1.5%;
+	height: 2px;
+	background-color: green;
+	float: left;
+	margin-right: .4%;
+}
+
+
+

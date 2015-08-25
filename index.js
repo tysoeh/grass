@@ -1,30 +1,27 @@
-function Blade (instanceNum){
-  this.instanceNum = instanceNum;
-  var blade = document.getElementById("blade");
-  var bladeClone = blade.cloneNode(true);
-    console.log(bladeClone);
-    bladeClone.id = "blade" + instanceNum; //in case we need to call this instance in the future
-  document.getElementById("lawn").appendChild(bladeClone); //attach this instance to the lawn
-  var bladeHeightValue = 0;
-  var bladeHeight = bladeClone.style.height = bladeHeightValue + "px";
-    console.log(bladeClone.style.height);
-  bladeClone.style.color = "green";
-  bladeClone.style.position = "absolute";
-  bladeClone.style.left = instanceNum + "px"; //sets absolute position from the left equal to its instance number
-    console.log(bladeClone.style.left);
-    
-  //bladeClone.style.color = bladeColor; //mess with this later- randomize shade of green
-  //var bladeColor = randomizer();
-  
-  //tell blade to grow at a random rate somewhere here
+function blade() {
+}
 
-  function grow(){ //makes blade increase in height by a pixel
-    bladeHeightValue ++;
-    bladeHeight = bladeClone.style.height = bladeHeightValue + "px";
-  }
+var lawn = document.getElementById('lawn');
+
+for (var i= 0; i <= 50; i++) {
+  var newBlade = document.createElement('div');
+  lawn.appendChild(newBlade);
+  newBlade.className = "blade";
+  console.log(newBlade);
+};
+
+
+var blades = document.getElementsByClassName('blade');
+console.log(blades);
+
+setInterval(function(){
+for (var i = 0; i < blades.length; i++) {
+  var bladeHeight = blades[i].clientHeight;
+  bladeHeight += Math.floor((Math.random() * 10) + 1);
+  var bladeGrowth = bladeHeight.toString + 'px';
+  bladeGrowth = blades[i].style.height;
+  console.log(bladeHeight);
 }
-for (i=0; i<=200; i++){ //create "i" number of blades
-  Blade(i);
-  document.getElementById("soil").style.width = i+1 + "px"; //make the soil element as wide as the number of blades of grass
-}
+},
+ 2000);
 
