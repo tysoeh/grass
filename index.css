@@ -1,5 +1,5 @@
 .lawn {
-  position: fixed;
+	position: fixed;
   bottom: 10px;
   left: 0;
   width: 100%;
@@ -21,6 +21,9 @@
 	background-color: green;
 	float: left;
 	margin-right: .4%;
+	bottom: 10px;
+	padding-bottom: 0px;
+
 }
 
 
