@@ -1,6 +1,5 @@
 .lawn {
-	position: fixed;
-  bottom: 10px;
+	position: absolute;
   left: 0;
   width: 100%;
 
@@ -8,8 +7,7 @@
 .soil {
   height: 10px;
   background-color: SaddleBrown;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   left: 0;
   width: 100%;
 }
