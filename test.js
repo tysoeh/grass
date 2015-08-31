@@ -1,14 +1,17 @@
-
-
 var lawn = document.getElementById('lawn');
 
 var bladeRate = [];
 
-for (var i = 0; i <= 200; i++) {
+for (var i = 0; i <= 100; i++) {
     var newBlade = document.createElement('div');
     newBlade.randomRate = Math.floor((Math.random() * 10) + 1);
     lawn.appendChild(newBlade);
-    newBlade.className = "blade " + "color" + Math.floor((Math.random() * 3) + 1);
+    newBlade.style.backgroundColor = 'rgb('  + Math.floor((Math.random() * 130) + 1) + ', ' 
+        + Math.floor((Math.random() * 255) + 100) + ', ' 
+        + Math.floor((Math.random() * 80) + 1) + ')';
+    newBlade.className = "blade ";
+
+       
     console.log(newBlade);
 };
 
@@ -24,3 +27,5 @@ setInterval(function() {
         }
     },
     50);
+
+
