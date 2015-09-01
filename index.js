@@ -13,21 +13,16 @@ setInterval(function() { //sets an interval that makes the blades grow a random 
         }
     },
     2000);
-    
+
 
 
 function makeGardenBeds(){  //for each h2 element, make a span above (lawn) and a span below (soil)
     for (var i = 0; i<beds.length; i++){ //should "i" start at 0 or 1?
-      var newSoil = document.createElement('span');
-      newSoil.className = "soil";
-      beds[i].appendChild(newSoil);
-      console.log(newSoil);
-      
       var newLawn = document.createElement('span');
       newLawn.className = "lawn";
       beds[i].appendChild(newLawn);
       console.log(newLawn);
-      
+
       seedGrass(newLawn);
     }
 }
