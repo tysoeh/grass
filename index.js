@@ -1,16 +1,22 @@
 'use strict';
 
-function Blade () {
+function Blade (seedCount) {
     //one blade of grass - it has a height
 
+    this.width = 0;
+    this.marginRight = 0;
     this.height = 0; //start at 0
-    this.addView();
+    this.addView(seedCount);
     this.addRandomColorClass();
 }
 
-Blade.prototype.addView = function () {
+Blade.prototype.addView = function (seedCount) {
+    //margin right of a blade is 0.25 of a blade width, so we calculate the percentage width based on how many blades are being added with that many margins minus one margin as there is no final margin-right. CSS will remove that margin-right style.
+
     this.view = document.createElement('div');
     this.view.className = 'blade';
+    this.view.style.width = 100 / (seedCount + 0.25 * (seedCount - 1)) + '%';
+    this.view.style.marginRight = 100 / (seedCount - 1) * 0.25 + '%';
 };
 
 Blade.prototype.addRandomColorClass = function () {
@@ -19,7 +25,7 @@ Blade.prototype.addRandomColorClass = function () {
 
 Blade.prototype.grow = function () {
     var growth = Math.floor((Math.random() * 10) + 1);
-    this.height += growth;
+    this.height += growth; //keep track of this height numerically on the object, the view worries about the `px` suffix
     this.view.style.height = this.height + 'px';
 };
 
@@ -50,7 +56,7 @@ Lawn.prototype.seedGrass = function (bed) {
 
     bed.blades = [];
     for (var i = 0; i <= this.seedCount; i++) {
-        var blade = new Blade();
+        var blade = new Blade(this.seedCount);
         bed.blades.push(blade); //reference to the blade object
         bed.view.appendChild(blade.view); //put the blade DOM view on the bed DOM view
     }
@@ -73,6 +79,6 @@ Lawn.prototype.grow = function () {
     };
 };
 
-var lawn = new Lawn(60, 1000);
+var lawn = new Lawn(80, 1000);
 lawn.makeGardenBeds();
 lawn.startGrowing();
