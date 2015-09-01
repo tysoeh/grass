@@ -1,8 +1,9 @@
 'use strict';
 
 function Blade () {
-    //one blade of grass - has height, and class
+    //one blade of grass - it has a height
 
+    this.height = 0; //start at 0
     this.addView();
     this.addRandomColorClass();
 }
@@ -16,9 +17,16 @@ Blade.prototype.addRandomColorClass = function () {
     this.view.className += ' ' + 'color' + Math.floor((Math.random() * 3));
 };
 
-function Lawn (seedCount) {
+Blade.prototype.grow = function () {
+    var growth = Math.floor((Math.random() * 10) + 1);
+    this.height += growth;
+    this.view.style.height = this.height + 'px';
+};
+
+function Lawn (seedCount, frequency) {
     //I have multiple beds, but you specify how many blades of grass to plant in each by passing seedCount
     this.seedCount = seedCount;
+    this.frequency = frequency;
 }
 
 Lawn.prototype.makeGardenBeds = function () {
@@ -35,26 +43,45 @@ Lawn.prototype.makeGardenBeds = function () {
 
         self.seedGrass(bed);
     });
+
+    self.grow();
+
+    setInterval(function () {
+        //self.grow();
+        //self.beds.forEach(function (bed) {
+        //    bed.blades.forEach(function (blade) {
+        //        console.log(blade.view);
+        //    });
+        //});
+    }, self.frequency);
+
+    //setInterval(self.grow, self.frequency);
 };
 
 Lawn.prototype.seedGrass = function (bed) {
     //put multiple blades of grass in a bed
-    //console.log('planting in:', bed);
 
+    bed.blades = [];
     for (var i = 0; i <= this.seedCount; i++) {
         var blade = new Blade();
-        bed.view.appendChild(blade.view);
+        bed.blades.push(blade); //reference to the blade object
+        bed.view.appendChild(blade.view); //put the blade DOM view on the bed DOM view
     }
 };
 
 Lawn.prototype.grow = function () {
+
+    //return function () {
+        this.beds.forEach(function (bed) {
+            bed.blades.forEach(function (blade) {
+                blade.grow();
+            });
+        });
+    //};
 };
 
-var lawn = new Lawn(88);
+var lawn = new Lawn(88, 1000);
 lawn.makeGardenBeds();
-lawn.grow();
-
-//console.log(beds);
 
 //var lawn = document.getElementById('lawn');
 //var blades = document.getElementsByClassName('blade'); //get a list of the blade elemnts on DOM
