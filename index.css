@@ -1,13 +1,19 @@
 .lawn {
 	position: absolute;
+	position: fixed;
+  bottom: 10px;
   left: 0;
   width: 100%;
+  display: flex;
+  align-items: flex-end;
 
 }
 .soil {
   height: 10px;
   background-color: SaddleBrown;
   position: absolute;
+  position: fixed;
+  bottom: 0;
   left: 0;
   width: 100%;
 }
@@ -19,10 +25,68 @@
 	background-color: green;
 	float: left;
 	margin-right: .4%;
+	margin-right: .2%;
 	bottom: 10px;
 	padding-bottom: 0px;
 
 }
 
+.color1 {
+  background-color: #1c826e;
+}
 
+.color2 {
+  background-color: #42821c;
+}
 
+.color3 {
+  background-color: #29db61;
+}
+
+.color4 {
+  background-color: #a3db29;
+}
+
+.color5 {
+  background-color: #29db2e;
+}
+
+.color6 {
+  background-color: #52ad54;
+}
+
+.color7 {
+  background-color: #90ad52;
+}
+
+.color8 {
+  background-color: #1fc77d;
+}
+
+.color9 {
+  background-color: #1fc744;
+}
+
+.color10 {
+  background-color: #77c71f;
+}
+
+.color11 {
+  background-color: #1fc78c;
+}
+
+.color12 {
+  background-color: #63c71f;
+}
+
+.color13 {
+  background-color: #469140;
+}
+
+.color14 {
+  background-color: #779140;
+}
+
+.color15 {
+  background-color: #c5e740;
+}
