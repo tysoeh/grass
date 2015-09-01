@@ -1,21 +1,24 @@
 .lawn {
-	position: absolute;
-	position: fixed;
-  bottom: 10px;
+	position: relative;
   left: 0;
   width: 100%;
   display: flex;
   align-items: flex-end;
-
 }
 .soil {
   height: 10px;
   background-color: SaddleBrown;
   position: absolute;
-  position: fixed;
-  bottom: 0;
   left: 0;
   width: 100%;
+  display: flex;
+}
+
+.h2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
@@ -25,10 +28,7 @@
 	background-color: green;
 	float: left;
 	margin-right: .4%;
-	margin-right: .2%;
 	bottom: 10px;
-	padding-bottom: 0px;
-
 }
 
 .color1 {

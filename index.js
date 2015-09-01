@@ -16,7 +16,7 @@ setInterval(function() { //sets an interval that makes the blades grow a random 
     
 
 
-function makeGardenBeds(){  //for each h2 element, make a div above (lawn) and a div below (soil)
+function makeGardenBeds(){  //for each h2 element, make a span above (lawn) and a span below (soil)
     for (var i = 0; i<beds.length; i++){ //should "i" start at 0 or 1?
       var newSoil = document.createElement('span');
       newSoil.className = "soil";
