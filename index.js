@@ -56,8 +56,8 @@ Lawn.prototype.seedGrass = function (bed) {
 
     bed.blades = [];
     for (var i = 0; i <= this.seedCount; i++) {
-        var blade = new Blade(this.seedCount);
-        bed.blades.push(blade); //reference to the blade object
+        var blade = new Blade(this.seedCount); //a blade needs to be aware of how many siblings it has
+        bed.blades.push(blade); //reference to the blade object, not the DOM view of it
         bed.view.appendChild(blade.view); //put the blade DOM view on the bed DOM view
     }
 };
@@ -73,12 +73,12 @@ Lawn.prototype.grow = function () {
     return function () {
         self.beds.forEach(function (bed) {
             bed.blades.forEach(function (blade) {
-                blade.grow();
+                blade.grow(); //I call grow() on the blade object - which in turn changes its view
             });
         });
     };
 };
 
-var lawn = new Lawn(80, 1000);
+var lawn = new Lawn(80, 1000); //eighty blades, grow every 1 second
 lawn.makeGardenBeds();
 lawn.startGrowing();
