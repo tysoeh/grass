@@ -3,8 +3,8 @@
 function Blade (seedCount) {
     //one blade of grass - it has a height
 
-    this.width = 0;
-    this.marginRight = 0;
+    this.width = 100 / (seedCount + 0.25 * (seedCount - 1));
+    this.marginRight = this.width / 4;
     this.height = 0; //start at 0
     this.addView(seedCount);
     this.addRandomColorClass();
@@ -15,8 +15,9 @@ Blade.prototype.addView = function (seedCount) {
 
     this.view = document.createElement('div');
     this.view.className = 'blade';
-    var bladeWidth = this.view.style.width = 100 / (seedCount + 0.25 * (seedCount - 1)) + '%';
-    this.view.style.marginRight = bladeWidth / 4 + '%';
+    this.width =
+    this.view.style.width = this.width + '%';
+    this.view.style.marginRight = this.marginRight + '%';
 };
 
 Blade.prototype.addRandomColorClass = function () {
