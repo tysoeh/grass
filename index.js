@@ -15,8 +15,8 @@ Blade.prototype.addView = function (seedCount) {
 
     this.view = document.createElement('div');
     this.view.className = 'blade';
-    this.view.style.width = 100 / (seedCount + 0.25 * (seedCount - 1)) + '%';
-    this.view.style.marginRight = 100 / (seedCount - 1) * 0.25 + '%';
+    var bladeWidth = this.view.style.width = 100 / (seedCount + 0.25 * (seedCount - 1)) + '%';
+    this.view.style.marginRight = bladeWidth / 4 + '%';
 };
 
 Blade.prototype.addRandomColorClass = function () {
@@ -79,6 +79,6 @@ Lawn.prototype.grow = function () {
     };
 };
 
-var lawn = new Lawn(80, 1000); //eighty blades, grow every 1 second
+var lawn = new Lawn(10, 4000); //eighty blades, grow every 1 second
 lawn.makeGardenBeds();
 lawn.startGrowing();
