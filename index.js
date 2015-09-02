@@ -15,7 +15,6 @@ Blade.prototype.addView = function (seedCount) {
 
     this.view = document.createElement('div');
     this.view.className = 'blade';
-    this.width =
     this.view.style.width = this.width + '%';
     this.view.style.marginRight = this.marginRight + '%';
 };
