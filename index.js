@@ -20,7 +20,7 @@ Blade.prototype.addView = function (seedCount) {
 };
 
 Blade.prototype.addRandomColorClass = function () {
-    this.view.className += ' ' + 'color' + Math.floor((Math.random() * 3));
+    this.view.className += ' ' + 'color' + Math.floor((Math.random() * 15) + 1);
 };
 
 Blade.prototype.grow = function () {
