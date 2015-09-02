@@ -1,16 +1,16 @@
 'use strict';
 
-function Blade (seedCount) {
+function Blade (seedCount, bladeSpaceRatio) {
     //one blade of grass - it has a height
 
-    this.width = 100 / (seedCount + 0.25 * (seedCount - 1));
-    this.marginRight = this.width / 4;
+    this.width = 100 / (seedCount + bladeSpaceRatio * (seedCount - 1));
+    this.marginRight = this.width * bladeSpaceRatio;
     this.height = 0; //start at 0
     this.addView(seedCount);
     this.addRandomColorClass();
 }
 
-Blade.prototype.addView = function (seedCount) {
+Blade.prototype.addView = function () {
     //margin right of a blade is 0.25 of a blade width, so we calculate the percentage width based on how many blades are being added with that many margins minus one margin as there is no final margin-right. CSS will remove that margin-right style.
 
     this.view = document.createElement('div');
@@ -29,10 +29,11 @@ Blade.prototype.grow = function () {
     this.view.style.height = this.height + 'px';
 };
 
-function Lawn (seedCount, frequency) {
+function Lawn (seedCount, frequency, bladeSpaceRatio) {
     //I have multiple beds, but you specify how many blades of grass to plant in each by passing seedCount
     this.seedCount = seedCount;
     this.frequency = frequency;
+    this.bladeSpaceRatio = bladeSpaceRatio;
 }
 
 Lawn.prototype.makeGardenBeds = function () {
@@ -56,7 +57,7 @@ Lawn.prototype.seedGrass = function (bed) {
 
     bed.blades = [];
     for (var i = 0; i <= this.seedCount; i++) {
-        var blade = new Blade(this.seedCount); //a blade needs to be aware of how many siblings it has
+        var blade = new Blade(this.seedCount, this.bladeSpaceRatio); //a blade needs to be aware of how many siblings it has
         bed.blades.push(blade); //reference to the blade object, not the DOM view of it
         bed.view.appendChild(blade.view); //put the blade DOM view on the bed DOM view
     }
@@ -79,6 +80,6 @@ Lawn.prototype.grow = function () {
     };
 };
 
-var lawn = new Lawn(10, 4000); //eighty blades, grow every 1 second
+var lawn = new Lawn(10, 1000, 0.25); //eighty blades, grow every 1 second, with a space to blade ratio of 0.25
 lawn.makeGardenBeds();
 lawn.startGrowing();
