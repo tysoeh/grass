@@ -11,12 +11,13 @@ h2 {
 }
 
 .blade {
-	width: 1.5%;
-	height: 2px;
 	background-color: green;
 	float: left;
-	margin-right: .4%;
 	bottom: 10px;
+}
+
+.blade[style]:last-child {
+    margin-right: 0 !important;
 }
 
 .color1 {
