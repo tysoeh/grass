@@ -56,7 +56,7 @@ Lawn.prototype.seedGrass = function (bed) {
     //put multiple blades of grass in a bed
 
     bed.blades = [];
-    for (var i = 0; i <= this.seedCount; i++) {
+    for (var i = 1; i <= this.seedCount; i++) {
         var blade = new Blade(this.seedCount, this.bladeSpaceRatio); //a blade needs to be aware of how many siblings it has
         bed.blades.push(blade); //reference to the blade object, not the DOM view of it
         bed.view.appendChild(blade.view); //put the blade DOM view on the bed DOM view
@@ -80,6 +80,6 @@ Lawn.prototype.grow = function () {
     };
 };
 
-var lawn = new Lawn(10, 1000, 0.25); //eighty blades, grow every 1 second, with a space to blade ratio of 0.25
+var lawn = new Lawn(4, 1000, 0.25); //eighty blades, grow every 1 second, with a space to blade ratio of 0.25
 lawn.makeGardenBeds();
 lawn.startGrowing();
