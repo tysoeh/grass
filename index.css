@@ -1,30 +1,81 @@
 .lawn {
-	position: fixed;
-  bottom: 10px;
+	position: relative;
   left: 0;
   width: 100%;
-
-}
-.soil {
-  height: 10px;
-  background-color: SaddleBrown;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
+h2 {
+  border-bottom: 10px solid saddlebrown;
+}
 
 .blade {
-	width: 1.5%;
-	height: 2px;
 	background-color: green;
 	float: left;
-	margin-right: .4%;
 	bottom: 10px;
-	padding-bottom: 0px;
-
 }
 
+.blade[style]:last-child {
+    margin-right: 0 !important;
+}
 
+.color1 {
+  background-color: #1c826e;
+}
 
+.color2 {
+  background-color: #42821c;
+}
+
+.color3 {
+  background-color: #29db61;
+}
+
+.color4 {
+  background-color: #a3db29;
+}
+
+.color5 {
+  background-color: #29db2e;
+}
+
+.color6 {
+  background-color: #52ad54;
+}
+
+.color7 {
+  background-color: #90ad52;
+}
+
+.color8 {
+  background-color: #1fc77d;
+}
+
+.color9 {
+  background-color: #1fc744;
+}
+
+.color10 {
+  background-color: #77c71f;
+}
+
+.color11 {
+  background-color: #1fc78c;
+}
+
+.color12 {
+  background-color: #63c71f;
+}
+
+.color13 {
+  background-color: #469140;
+}
+
+.color14 {
+  background-color: #779140;
+}
+
+.color15 {
+  background-color: #c5e740;
+}
