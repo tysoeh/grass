@@ -80,6 +80,6 @@ Lawn.prototype.grow = function () {
     };
 };
 
-var lawn = new Lawn(4, 1000, 0.25); //eighty blades, grow every 1 second, with a space to blade ratio of 0.25
+var lawn = new Lawn(80, 1000, 0.25); //eighty blades, grow every 1 second, with a space to blade ratio of 0.25
 lawn.makeGardenBeds();
 lawn.startGrowing();
